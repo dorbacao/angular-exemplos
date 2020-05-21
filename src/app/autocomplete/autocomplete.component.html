@@ -1,17 +1,20 @@
-<form class="example-form" [formGroup]='formGroup'>
-  <mat-form-field class="example-full-width">
-    <input 
-      matInput 
-      placeholder="Digite o nome do usuario" 
-      [matAutocomplete]="auto" 
-      formControlName='userInput'>
-  </mat-form-field>
-  <span *ngIf="formGroup.get('userInput').value" >Usuário escolhido: {{formGroup.get('userInput').value.name | json}}</span>
-
-  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-      <mat-option *ngFor="let usuario of (usuariosFiltrados | async)?.results" [value]="usuario">
-        <span>{{ usuario.name }}</span>
-      </mat-option>
-  </mat-autocomplete>
-</form>
-
+<mat-card>
+  <mat-card>
+    <form class="example-form" [formGroup]='formGroup'>
+      <mat-form-field class="example-full-width">
+        <input 
+          matInput 
+          placeholder="Digite o nome do usuario" 
+          [matAutocomplete]="auto" 
+          formControlName='userInput'>
+      </mat-form-field>
+      <span *ngIf="formGroup.get('userInput').value" >Usuário escolhido: {{formGroup.get('userInput').value.name | json}}</span>
+    
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+          <mat-option *ngFor="let usuario of (usuariosFiltrados | async)?.results" [value]="usuario">
+            <span>{{ usuario.name }}</span>
+          </mat-option>
+      </mat-autocomplete>
+    </form>
+  </mat-card>
+</mat-card>
