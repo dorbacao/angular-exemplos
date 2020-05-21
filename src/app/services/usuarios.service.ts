@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable} from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { Usuario, IResponseUsuario } from './usuarios.class';
 
@@ -9,32 +9,11 @@ import { Usuario, IResponseUsuario } from './usuarios.class';
 })
 export class UsuariosService {
 
-  url: string = "http://demo9608387.mockable.io/";
-
   constructor(private httpClient: HttpClient) { }
-
-  getAllData(): Observable<IResponseUsuario>{
-    var result = new Array<Usuario>();
-    result.push(new Usuario(1,"Marcus"));
-    result.push(new Usuario(2,"Vinicius"));
-    result.push(new Usuario(4,"Carreira"));
-    result.push(new Usuario(5,"Dorbação"));
-    result.push(new Usuario(6,"Bruno Berdinazzi"));
-    result.push(new Usuario(7,"Mezenga"));
-
-    var response = {
-      total:4,
-      results:result
-    };
-
-    return of(response);    
-  }
 
   search(name: string): Observable<IResponseUsuario>{
 
-    let urlGet = `${ this.url }usuarios`;
-    //let requestPromisse = this.httpClient.get<IResponseUsuario>(urlGet);
-    let requestPromisse = this.getAllData();
+    let requestPromisse = this.httpClient.get<IResponseUsuario>('/assets/mocks/usuarios.json');
     return requestPromisse.pipe(
       tap((response: IResponseUsuario) => {
         response.results = response.results

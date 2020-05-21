@@ -1,0 +1,13 @@
+{
+    "total":4,
+    "results":[
+        {"id":1, "name":"Anderson"},
+        {"id":2, "name":"Amanda"},
+        {"id":3, "name":"Bruno"},
+        {"id":4, "name":"Brenda"},
+        {"id":5, "name":"Carlos"},
+        {"id":6, "name":"Carla"},
+        {"id":7, "name":"Darlan"},
+        {"id":8, "name":"Emerson"}
+    ]
+}
