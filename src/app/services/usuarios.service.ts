@@ -17,7 +17,10 @@ export class UsuariosService {
     var result = new Array<Usuario>();
     result.push(new Usuario(1,"Marcus"));
     result.push(new Usuario(2,"Vinicius"));
-    result.push(new Usuario(3,"Carreira"));
+    result.push(new Usuario(4,"Carreira"));
+    result.push(new Usuario(5,"Dorbação"));
+    result.push(new Usuario(6,"Bruno Berdinazzi"));
+    result.push(new Usuario(7,"Mezenga"));
 
     var response = {
       total:4,
