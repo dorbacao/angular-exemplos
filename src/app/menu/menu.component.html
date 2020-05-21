@@ -15,7 +15,9 @@
                 routerLink="." 
                 (click)="onClickItem($event, nav)"  
                 *ngFor="let nav of fillerNav">
-                {{nav}}
+                <mat-label>
+                  {{nav}}
+                </mat-label>
             </a>
         </mat-nav-list>
       </mat-sidenav>
